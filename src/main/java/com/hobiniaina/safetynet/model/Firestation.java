@@ -1,14 +1,14 @@
 package com.hobiniaina.safetynet.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.List;
 
+@AllArgsConstructor
 @Data
 public class Firestation {
-    private Long id;
+
     private  int station_number;
     private String address;
-    private List<Person> residents;
 }
 
