@@ -2,17 +2,26 @@ package com.hobiniaina.safetynet.repository;
 
 
 import com.hobiniaina.safetynet.model.Person;
+import com.hobiniaina.safetynet.model.SafetyData;
 import org.springframework.stereotype.Repository;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @Repository
  public class PersonRepository {
-        private final List<Person> persons = new ArrayList<>();
+       SafetyData safetyData = SafetyData.readFromJsonFile("src/main/resources/data.json");
+       List<Person> persons=safetyData.getPersons();
 
-        public Optional<Person> findByFirstNameAndLastName(String firstName, String lastName) {
+    public PersonRepository() throws IOException {
+        this.safetyData=safetyData;
+
+    }
+
+    public Optional<Person> findByFirstNameAndLastName(String firstName, String lastName) {
             return persons.stream()
                     .filter(person -> person.getFirstName().equals(firstName) && person.getLastName().equals(lastName))
                     .findFirst();
