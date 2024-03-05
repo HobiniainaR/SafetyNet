@@ -1,14 +1,16 @@
 package com.hobiniaina.safetynet.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+
+import lombok.*;
+
 
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Firestation {
-
-    private  int station_number;
     private String address;
+    private  int station;
+
 }
 

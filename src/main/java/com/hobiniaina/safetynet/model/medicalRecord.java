@@ -1,17 +1,18 @@
 package com.hobiniaina.safetynet.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
+
 
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class medicalRecord {
-
     private String firstName;
     private String lastName;
-    private int birthdate;
-    private List<String>medications;
+    private String birthdate;
+    private List<String> medications;
     private List<String> allergies;
+
 }

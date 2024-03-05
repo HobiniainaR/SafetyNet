@@ -5,6 +5,7 @@ import com.hobiniaina.safetynet.model.Person;
 import com.hobiniaina.safetynet.model.SafetyData;
 import org.springframework.stereotype.Repository;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +14,11 @@ import java.util.Optional;
 
 @Repository
  public class PersonRepository {
-       SafetyData safetyData = SafetyData.readFromJsonFile("src/main/resources/data.json");
-       List<Person> persons=safetyData.getPersons();
+    SafetyData safetyData = SafetyData.readFromJsonFile("C:\\Users\\rabho\\Documents\\Openclassrooms\\safetynet\\src\\main\\resources\\data.json");
+    List<Person> persons=safetyData.getPersons();
 
     public PersonRepository() throws IOException {
-        this.safetyData=safetyData;
+
 
     }
 

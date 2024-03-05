@@ -1,23 +1,20 @@
 package com.hobiniaina.safetynet.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
+import lombok.*;
 
-
-
-@AllArgsConstructor
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class  Person {
 
     private String firstName;
     private String lastName;
     private String address;
     private String city;
-    private Long zip;
-    private Long phone;
+    private String zip;
+    private String phone;
     private String email;
 
 }

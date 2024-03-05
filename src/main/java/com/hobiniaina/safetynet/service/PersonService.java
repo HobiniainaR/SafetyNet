@@ -4,6 +4,7 @@ import com.hobiniaina.safetynet.model.Person;
 import com.hobiniaina.safetynet.repository.PersonRepository;
 import lombok.Data;
 
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,16 +14,16 @@ import java.util.Optional;
 @Data
 @Service
 public class PersonService {
-
     private PersonRepository personRepository;
 
-    public PersonService(PersonRepository personRepository){
+    public PersonService( PersonRepository personRepository){
 
         this.personRepository=personRepository;
     }
 
 
     public List<Person> getAllPersons() {
+
         return personRepository.getAllPersons();
     }
 
@@ -31,7 +32,8 @@ public class PersonService {
     }
 
     public void addPerson(Person person) {
-         personRepository.save(person);
+
+        personRepository.save(person);
     }
 
     public void update(String firstName, String lastName, Person updatedPerson) {
