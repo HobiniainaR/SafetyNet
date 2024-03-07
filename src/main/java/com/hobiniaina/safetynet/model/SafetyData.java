@@ -1,7 +1,5 @@
 package com.hobiniaina.safetynet.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.*;
 
@@ -13,7 +11,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class SafetyData {
 
     private List<Person> persons;

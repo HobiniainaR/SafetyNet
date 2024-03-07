@@ -41,6 +41,7 @@ public class PersonService {
     }
 
     public void deletePerson(String firstName, String lastName) {
+
         personRepository.deletePerson(firstName, lastName);
     }
 

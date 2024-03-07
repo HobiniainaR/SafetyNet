@@ -18,8 +18,7 @@ import java.util.Optional;
     List<Person> persons=safetyData.getPersons();
 
     public PersonRepository() throws IOException {
-
-
+    this.safetyData=safetyData;
     }
 
     public Optional<Person> findByFirstNameAndLastName(String firstName, String lastName) {
@@ -29,7 +28,8 @@ import java.util.Optional;
         }
 
         public void save(Person person) {
-            persons.add(person);
+
+        persons.add(person);
         }
 
         public void update(String firstName, String lastName, Person updatedPerson) {

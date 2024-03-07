@@ -18,6 +18,7 @@ public class PersonController {
 
 
     public PersonController(PersonService personService) {
+
         this.personService = personService;
     }
 
@@ -27,7 +28,7 @@ public class PersonController {
         return new ResponseEntity<>(persons, HttpStatus.OK);
     }
 
-    @GetMapping("/{firstName}/{lastName}")
+    @GetMapping("/firstName/lastName")
     public ResponseEntity<Person> getPersonByFirstNameAndLastName(
             @PathVariable String firstName, @PathVariable String lastName) {
         Optional<Person> person = personService.getPersonByFirstNameAndLastName(firstName, lastName);

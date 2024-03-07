@@ -9,8 +9,9 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 public class Firestation {
+
+    private Integer station;
     private String address;
-    private  int station;
 
 }
 
