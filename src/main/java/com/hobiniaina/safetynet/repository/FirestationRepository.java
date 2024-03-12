@@ -19,6 +19,7 @@ public class FirestationRepository {
     }
 
     public List<Firestation> getAllFirestations() {
+
         return new ArrayList<>(firestations);
     }
 
