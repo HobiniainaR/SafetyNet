@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Data
@@ -44,5 +45,4 @@ public class PersonService {
 
         personRepository.deletePerson(firstName, lastName);
     }
-
 }

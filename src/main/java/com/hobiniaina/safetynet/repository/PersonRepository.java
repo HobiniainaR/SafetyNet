@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Repository
@@ -53,6 +54,13 @@ import java.util.Optional;
 
             return new ArrayList<>(persons);
         }
+    public List<String> getEmailsByCity(String city) {
+        return persons.stream()
+                .filter(person -> person.getCity().equalsIgnoreCase(city))
+                .map(Person::getEmail)
+                .collect(Collectors.toList());
     }
+
+ }
 
 

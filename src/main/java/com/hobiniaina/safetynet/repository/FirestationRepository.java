@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 @Repository
 public class FirestationRepository {
     SafetyData safetyData = SafetyData.readFromJsonFile("C:\\Users\\rabho\\Documents\\Openclassrooms\\safetynet\\src\\main\\resources\\data.json");
@@ -40,5 +41,4 @@ public class FirestationRepository {
     public void deleteByStationOrAddress(Integer station, String address) {
         firestations.removeIf(firestation -> firestation.getStation().equals(station) || firestation.getAddress().equals(address));
     }
-
 }
