@@ -12,9 +12,11 @@ public class CommunityEmailService {
 
     @Autowired
     public CommunityEmailService(PersonRepository personRepository) {
+
         this.personRepository = personRepository;
     }
     public List<String> getEmailsByCity(String city) {
-        return personRepository.getEmailsByCity(city);
+      //  return personRepository.getEmailsByCity(city);
+        return null;
     }
 }

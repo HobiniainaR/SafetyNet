@@ -7,6 +7,7 @@ import lombok.Data;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,7 +24,7 @@ public class PersonService {
     }
 
 
-    public List<Person> getAllPersons() {
+    public List<Person> getPersons() {
 
         return personRepository.getAllPersons();
     }
@@ -45,4 +46,10 @@ public class PersonService {
 
         personRepository.deletePerson(firstName, lastName);
     }
+
+    public List<String> getPhoneNumbersByAddress(String address) {
+        return personRepository.getPhoneNumbersByAddress(address);
+    }
+
+
 }

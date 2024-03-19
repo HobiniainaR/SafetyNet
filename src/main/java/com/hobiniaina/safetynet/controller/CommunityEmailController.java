@@ -22,7 +22,8 @@ public class CommunityEmailController {
     public ResponseEntity<List<String>> getEmailsByCity(@RequestParam String city) {
 
             List<String> emails = communityEmailRepository.getEmailsByCity(city);
-            return new ResponseEntity<>( HttpStatus.OK);
+
+            return new ResponseEntity<>(emails, HttpStatus.OK);
 
         }
     }

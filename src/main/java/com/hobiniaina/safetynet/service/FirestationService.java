@@ -35,4 +35,11 @@ public class FirestationService {
         public void deleteFirestation(Integer station, String address) {
                 firestationRepository.deleteByStationOrAddress(station, address);
         }
+
+        public List<String> getAddressesOfFirestation(Integer station){
+                return this.firestationRepository.getAddressesByFirestation(station);
+        }
+
+
+
 }

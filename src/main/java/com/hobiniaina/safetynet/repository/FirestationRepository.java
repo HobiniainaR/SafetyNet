@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 
 @Repository
@@ -40,5 +40,13 @@ public class FirestationRepository {
 
     public void deleteByStationOrAddress(Integer station, String address) {
         firestations.removeIf(firestation -> firestation.getStation().equals(station) || firestation.getAddress().equals(address));
+    }
+
+    public List<String> getAddressesByFirestation(Integer station){
+        List<String> addresses = this.firestations.stream()
+                .filter(firestation -> firestation.getStation().equals(station))
+                .map(firestation -> firestation.getAddress())
+                .collect(Collectors.toList());
+        return addresses;
     }
 }
