@@ -1,22 +1,20 @@
 package com.hobiniaina.safetynet.service;
 
-import com.hobiniaina.safetynet.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hobiniaina.safetynet.repository.CommunityEmailRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CommunityEmailService {
-    private final PersonRepository personRepository;
+    private final CommunityEmailRepository communityEmailRepository;
 
-    @Autowired
-    public CommunityEmailService(PersonRepository personRepository) {
-
-        this.personRepository = personRepository;
+    public CommunityEmailService(CommunityEmailRepository communityEmailRepository) {
+        this.communityEmailRepository = communityEmailRepository;
     }
+
     public List<String> getEmailsByCity(String city) {
-      //  return personRepository.getEmailsByCity(city);
-        return null;
+        return communityEmailRepository.getEmailsByCity(city);
     }
 }

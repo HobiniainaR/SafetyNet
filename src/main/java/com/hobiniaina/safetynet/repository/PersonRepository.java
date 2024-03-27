@@ -9,8 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
-
+import java.util.stream.Collectors;
 
 
 @Repository
@@ -60,7 +61,11 @@ import java.util.Optional;
         List<String> phoneNumbers = new ArrayList<>();
         return phoneNumbers;
     }
-
+    public List<Person> getPersonsByAddress(String address){
+        return this.persons.stream()
+                .filter(person -> Objects.equals(person.getAddress(), address))
+                .collect(Collectors.toList());
+    }
 }
 
 

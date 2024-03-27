@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -76,8 +77,7 @@ public class PersonRepositoryTest {
     }
 
     @Test
-   public
-    void testDeletePerson() {
+   public void testDeletePerson() {
 
         Person personToDelete = new Person();
         personToDelete.setFirstName("Robert");
@@ -87,6 +87,15 @@ public class PersonRepositoryTest {
         personRepository.deletePerson("Robert", "Clay");
 
         assertFalse(personRepository.getAllPersons().contains(personToDelete));
+    }
+    @Test
+    public void testGetPhoneNumbersByAddress() {
+        String address = "1509 Culver St";
+
+        List<String> phoneNumbers = personRepository.getPhoneNumbersByAddress(address);
+
+        assertNotNull(phoneNumbers);
+
     }
 }
 
